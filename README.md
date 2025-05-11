@@ -45,7 +45,7 @@ export TG_ALLOWED_USERS="alice,bob,123456789"
 
 - Folder to Scan
 By default the bot scans ./data/. Override with:
-```bash
+
 export DOC_ROOT_PATH="/path/to/your/docs"
 
 ## Installation & Running
