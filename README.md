@@ -57,3 +57,51 @@ export TELEGRAM_BOT_TOKEN="…"
 export TG_ALLOWED_USERS="…"
 export DOC_ROOT_PATH="/path/to/docs"
 python search7.py
+
+## Usage
+/start
+Brief welcome message and usage hints.
+
+/index
+Triggers a full re-index of all .docx & text-PDF files under DOC_ROOT_PATH.
+The bot sends real-time progress (“Indexing file 42/317…”) and a final summary.
+
+/search <exact text>
+Finds every file containing that exact substring (case-insensitive).
+Returns a list of matching file paths.
+
+## Logging
+All actions (scans, indexing, searches, warnings) are logged to:
+
+lua
+Copy
+bot.log
+with timestamps and log levels.
+
+## Implementation Notes
+- File Scanning
+
+    -Skips non-.docx or invalid-ZIP docx files
+
+    -Reads PDF files via PyMuPDF, skips binary/empty PDFs
+
+- Indexing
+
+    -Uses Whoosh (or similar) to build an inverted index of file contents
+
+    -Supports exact‐phrase queries for fastest response
+
+- Concurrency & Cleanup
+
+    -Closes any open file handles before/after operations
+
+    -Updates progress in the initiating Telegram message using edit_message_text
+
+## Contributing
+1- Fork the repo
+
+2- Create a feature branch
+
+3- Submit a PR with tests and documentation updates
+
+Made with ❤️ and Python
