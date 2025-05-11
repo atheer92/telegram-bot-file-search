@@ -37,17 +37,17 @@ A fast, indexed Telegram bot for searching exact strings inside text-based docum
 Create a bot with @BotFather and set your token in environment or .env:
 ```bash
 export TELEGRAM_BOT_TOKEN="123456:ABC-DEF…"
-
+```
 - Authorized Users
 In your environment or config file, list allowed Telegram user IDs or usernames:
-
+```bash
 export TG_ALLOWED_USERS="alice,bob,123456789"
-
+```
 - Folder to Scan
 By default the bot scans ./data/. Override with:
-
+```bash
 export DOC_ROOT_PATH="/path/to/your/docs"
-
+```
 ## Installation & Running
 ```bash
 git clone https://github.com/yourusername/telegram-doc-search.git
@@ -57,7 +57,7 @@ export TELEGRAM_BOT_TOKEN="…"
 export TG_ALLOWED_USERS="…"
 export DOC_ROOT_PATH="/path/to/docs"
 python search7.py
-
+```
 ## Usage
 /start
 Brief welcome message and usage hints.
@@ -72,7 +72,6 @@ Returns a list of matching file paths.
 
 ## Logging
 All actions (scans, indexing, searches, warnings) are logged to:
-
 lua
 Copy
 bot.log
