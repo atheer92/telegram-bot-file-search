@@ -40,7 +40,7 @@ export TELEGRAM_BOT_TOKEN="123456:ABC-DEF…"
 
 - Authorized Users
 In your environment or config file, list allowed Telegram user IDs or usernames:
-```bash
+
 export TG_ALLOWED_USERS="alice,bob,123456789"
 
 - Folder to Scan
